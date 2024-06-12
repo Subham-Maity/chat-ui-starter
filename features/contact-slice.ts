@@ -1,27 +1,35 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Contact } from '@/types/chat.types';
-import {data} from "@/data";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { data } from "@/data";
+import { ContactSliceState } from "@/types/chat.types";
 
-const initialState: { contacts: Contact[] } = {
-    contacts: data,
+const initialState: ContactSliceState = {
+  contacts: data,
+  currentContact: null,
 };
+
 const contactSlice = createSlice({
-    name: 'contacts',
-    initialState,
-    reducers: {
-        markAsUnread: (state, action: PayloadAction<string>) => {
-            const contactId = action.payload;
-            const contact = state.contacts.find((c) => c.userId === contactId);
-            if (contact) {
-                contact.unreadCount = 1;
-            }
-        },
-        deleteContact: (state, action: PayloadAction<string>) => {
-            const contactId = action.payload;
-            state.contacts = state.contacts.filter((c) => c.userId !== contactId);
-        },
+  name: "contacts",
+  initialState,
+  reducers: {
+    markAsUnread: (state, action: PayloadAction<string>) => {
+      const contactId = action.payload;
+      const contact = state.contacts.find((c) => c.userId === contactId);
+      if (contact) {
+        contact.unreadCount = 1;
+      }
     },
+    deleteContact: (state, action: PayloadAction<string>) => {
+      const contactId = action.payload;
+      state.contacts = state.contacts.filter((c) => c.userId !== contactId);
+    },
+    setCurrentContact: (state, action: PayloadAction<string>) => {
+      const userId = action.payload;
+      const contact = state.contacts.find((c) => c.userId === userId);
+      state.currentContact = contact || null;
+    },
+  },
 });
 
-export const { markAsUnread, deleteContact } = contactSlice.actions;
+export const { markAsUnread, deleteContact, setCurrentContact } =
+  contactSlice.actions;
 export default contactSlice.reducer;
