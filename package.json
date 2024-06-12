@@ -10,6 +10,9 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.4.1",
+    "@nextui-org/system": "^2.2.1",
+    "@nextui-org/theme": "^2.2.5",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
     "@reduxjs/toolkit": "^2.2.5",
@@ -20,7 +23,7 @@
     "chartjs-plugin-datalabels": "^2.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "framer-motion": "^11.0.25",
+    "framer-motion": "^11.2.10",
     "lucide-react": "^0.365.0",
     "mini-svg-data-uri": "^1.4.4",
     "moment": "^2.30.1",

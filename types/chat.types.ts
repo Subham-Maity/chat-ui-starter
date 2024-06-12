@@ -11,11 +11,3 @@ export interface Contact {
     profilePictureURL: string;
     chat: Chat[];
 }
-
-interface ContactState {
-    contacts: Contact[];
-}
-export interface OptionsMenuProps {
-    onMarkAsUnread: () => void;
-    onDelete: () => void;
-}

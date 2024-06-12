@@ -1,10 +1,12 @@
-const data = [
+import {Contact} from "@/types/chat.types";
+
+export const data:Contact[] = [
   {
     userId: 'user1',
     name: 'Sam',
     unreadCount: 1,
     profilePictureURL:
-        'https://www.pexels.com/photo/portrait-photo-of-smiling-man-with-his-arms-crossed-standing-in-front-of-a-wall-2379004/',
+        'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     chat: [
       {
         user1: {
@@ -54,7 +56,7 @@ const data = [
     name: 'Elon',
     unreadCount: 0,
     profilePictureURL:
-        'https://www.pexels.com/photo/man-in-brown-polo-shirt-614810/',
+        'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     chat: [
       {
         user2: {
@@ -93,7 +95,7 @@ const data = [
     name: 'Kate',
     unreadCount: 1,
     profilePictureURL:
-        'https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/',
+        'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     chat: [
       {
         user2: {
