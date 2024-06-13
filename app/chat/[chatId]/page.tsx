@@ -1,10 +1,10 @@
 import React from "react";
-import MainLayout from "@/components/main-layout";
+import ChatLayout from "@/components/chat/chat";
 
 const Page = () => {
   return (
     <div className="bg-[#FFFFFF]">
-      <MainLayout />
+      <ChatLayout />
     </div>
   );
 };

@@ -8,14 +8,14 @@ export default function ChatInput() {
         alt="attach"
         height={300}
         width={300}
-        className="w-[32px] h-[32px]"
+        className="w-[40px] h-[40px]"
       />
       <Image
         src="/input-msz/Voice.svg"
         alt="attach"
         height={300}
         width={300}
-        className="w-[32px] h-[32px]"
+        className="w-[40px] h-[40px]"
       />
 
       <div className="flex items-center bg-white border rounded-full shadow-sm w-full ">
@@ -29,7 +29,7 @@ export default function ChatInput() {
           alt="attach"
           height={300}
           width={300}
-          className="w-[32px] h-[32px]"
+          className="w-[40px] h-[40px]"
         />
       </div>
     </div>

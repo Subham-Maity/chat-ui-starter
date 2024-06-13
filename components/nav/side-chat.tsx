@@ -35,7 +35,7 @@ const SideChat: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-[346px] bg-white border-r border-gray-200 p-4">
+    <div className="flex flex-col w-[346px] min-h-screen bg-white border-r border-gray-200 p-4">
       <h2 className="text-xl font-medium mb-4">Chats</h2>
       {contacts.map((contact) => (
         <div

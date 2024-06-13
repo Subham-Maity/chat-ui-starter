@@ -3,15 +3,15 @@ import { ChatListProps } from "@/components/chat/types/chat.types";
 
 const ChatList: React.FC<ChatListProps> = ({ chatData }) => {
   return (
-    <div className="flex justify-between flex-col gap-2 overflow-y-auto h-full w-full px-4 py-2">
+    <div className="flex flex-col gap-2 overflow-y-auto h-[calc(100vh-200px)] w-full px-4 py-2">
       {chatData.map((message, index) => (
         <div key={index}>
-          {message.user1 && (
+          {message.user && (
             <div className="flex justify-start mb-2">
               <div className="bg-[#FAFAFA] font-light text-black rounded-3xl px-3 py-2 max-w-[60%]">
-                <p>{message.user1.message}</p>
+                <p>{message.user.message}</p>
                 <p className="text-xs text-gray-500 mt-1">
-                  {message.user1.timeStamp}
+                  {message.user.timeStamp}
                 </p>
               </div>
             </div>
