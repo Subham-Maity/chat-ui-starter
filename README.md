@@ -4,10 +4,11 @@
 
 ## ⟭ Starter Project 
 
-### ※ Techs tack
+### ※ Tech Stack
 - NextJs
 - Tailwind
 - Redux
+
 ### ※ Installation Guide
 > Clone the repo `git clone git@github.com:Subham-Maity/chat-ui-starter.git`
 ```shell
