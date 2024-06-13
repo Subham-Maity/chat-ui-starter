@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import { setCurrentContact } from "@/features/contact-slice";
 import { useAppDispatch } from "@/store/useSelector";
 import ChatList from "@/components/chat/list/chat-list";
-import ChatInput from "@/components/chat/type/input-type";
+import ChatInput from "@/components/chat/chat-input/input-type";
 import SideChat from "@/components/nav/side-chat";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import useMediaQuery from "@/hooks/use-window-dimension";

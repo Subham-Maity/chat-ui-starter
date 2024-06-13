@@ -9,8 +9,8 @@ import { NextUIProvider } from "@nextui-org/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dash",
-  description: "Dash",
+  title: "Chat Layout",
+  description: "Chat Layout",
 };
 
 export default function RootLayout({
