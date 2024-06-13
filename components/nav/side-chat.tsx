@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { RootState } from "@/store/redux/store";
 import { deleteContact, markAsUnread } from "@/features/contact-slice";
 import {
@@ -13,11 +12,11 @@ import { IoEllipsisVertical } from "react-icons/io5";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { truncateMessage } from "@/utils/truncate-message";
-import { useAppSelector } from "@/store/useSelector";
+import { useAppDispatch, useAppSelector } from "@/store/useSelector";
 
 const SideChat: React.FC = () => {
   const contacts = useAppSelector((state: RootState) => state.chat.contacts);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const currentPath = usePathname();
   const handleMarkAsUnread = (userId: string) => {

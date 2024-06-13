@@ -22,12 +22,12 @@ const TopBarChat = ({
           height={300}
           width={300}
         />
-        <div className="items-start flex flex-col gap-1">
+        <div className="items-start flex flex-col">
           <p className="flex items-center justify-center gap-2 text-md font-medium text-black">
             {userName}
             <GoDotFill className="text-green-500" />
           </p>
-          <p className="text-sm font-light text-[#222222]">{description}</p>
+          <p className="text-sm font-light text-gray-500">{description}</p>
         </div>
       </div>
       <div className="flex gap-6 items-center justify-center">

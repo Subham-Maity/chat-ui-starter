@@ -6,6 +6,8 @@ import { RootState } from "@/store/redux/store";
 import { useParams } from "next/navigation";
 import { setCurrentContact } from "@/features/contact-slice";
 import { useAppDispatch } from "@/store/useSelector";
+import ChatList from "@/components/chat/list/chat-list";
+import ChatInput from "@/components/chat/type/input-type";
 
 const Chat = () => {
   const { chatId } = useParams();
@@ -13,6 +15,7 @@ const Chat = () => {
   const currentContact = useSelector(
     (state: RootState) => state.chat.currentContact,
   );
+
   useEffect(() => {
     if (chatId) {
       const chatIdString = Array.isArray(chatId) ? chatId[0] : chatId;
@@ -21,35 +24,23 @@ const Chat = () => {
   }, [chatId, dispatch]);
 
   return (
-    <div className="w-full h-screen ">
-      <div className="px-8 mt-6">
-        {currentContact && (
-          <>
-            <TopBarChat
-              imgUrl={currentContact.profilePictureURL}
-              imgName={currentContact.name}
-              userName={currentContact.name}
-              description="Click here for contact info"
-            />
-            {/* Render the chat messages here */}
-            {currentContact.chat.map((message, index) => (
-              <div key={index}>
-                {message.user1 && (
-                  <div>
-                    <p>{message.user1.message}</p>
-                    <p>{message.user1.timeStamp}</p>
-                  </div>
-                )}
-                {message.you && (
-                  <div>
-                    <p>{message.you.message}</p>
-                    <p>{message.you.timeStamp}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </>
-        )}
+    <div className="flex flex-col justify-between px-8 py-8 w-full min-h-screen">
+      {currentContact && (
+        <>
+          <TopBarChat
+            imgUrl={currentContact.profilePictureURL}
+            imgName={currentContact.name}
+            userName={currentContact.name}
+            description="Click here for contact info"
+          />
+          <div className="flex-grow overflow-y-auto">
+            <ChatList chatData={currentContact.chat} />
+          </div>
+        </>
+      )}
+
+      <div>
+        <ChatInput />
       </div>
     </div>
   );
