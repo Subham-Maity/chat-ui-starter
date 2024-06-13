@@ -1,10 +1,13 @@
-import MainLayout from "@/components/main-layout";
-
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-      <main className="flex min-h-screen  bg-[#FFFFFF]">
-      <MainLayout/>
-      </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/chat/user1");
+  }, [router]);
+
+  return null;
 }
