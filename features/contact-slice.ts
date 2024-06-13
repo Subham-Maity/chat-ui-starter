@@ -25,7 +25,13 @@ const contactSlice = createSlice({
     setCurrentContact: (state, action: PayloadAction<string>) => {
       const userId = action.payload;
       const contact = state.contacts.find((c) => c.userId === userId);
-      state.currentContact = contact || null;
+      if (contact) {
+        // Reset unreadCount to 0
+        contact.unreadCount = 0;
+        state.currentContact = contact;
+      } else {
+        state.currentContact = null;
+      }
     },
   },
 });
